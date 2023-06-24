@@ -1,0 +1,25 @@
+@use './signInReg.scss' as screen;
+
+div.fullSizeContainer{
+    @include screen.fullScreenContainer();
+    justify-content: center;
+    gap:50px;
+
+    .registerLogo{
+        border-radius: 100%;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        transform: translateX(calc(110px)) translateY(-50%);
+    }
+
+    .registerFrom{
+        width: min(300px , calc( 100% - 40px ));
+        margin:50px 20px;
+
+        .submitButton{
+            margin: 50px 0 0 0;
+        }
+    }
+
+}
