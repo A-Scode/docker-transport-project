@@ -28,4 +28,4 @@ jobs:
 
 
       - name: build
-        run: npm build
+        run: npm run build
