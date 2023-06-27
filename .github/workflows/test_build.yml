@@ -41,7 +41,7 @@ jobs:
 
 
   backend_test:
-    runs_on : {{ $matrix.os }}
+    runs_on : ${{ matrix.os }}
 
     strategy :
       matrix : 
