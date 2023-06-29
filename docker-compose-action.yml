@@ -1,0 +1,41 @@
+version : "3"
+
+services : 
+  web : 
+    extends : 
+      file : docker-compose.yml
+      service : web
+    
+    env_file : null
+    environment : 
+       - VITE_BACKEND_HOST=$VITE_BACKEND_HOST
+       - VITE_BACKEND_PORT=$VITE_BACKEND_PORT
+       - VITE_GOOGLE_CLIENT_ID=$VITE_GOOGLE_CLIENT_ID
+
+
+  backend : 
+    extends : 
+      file : docker-compose.yml
+      service : backend
+
+    env_file : null
+
+    environment :
+      - EMAIL_BACKEND=$EMAIL_BACKEND
+      - EMAIL_HOST=$EMAIL_HOST
+      - EMAIL_USE_TLS=$EMAIL_USE_TLS
+      - EMAIL_PORT=$EMAIL_PORT
+      - EMAIL_HOST_USER=$EMAIL_HOST_USER
+      - EMAIL_HOST_PASSWORD=$EMAIL_HOST_PASSWORD
+
+
+      - database_user=$database_user
+      - database_password=$database_password
+      - database_dbname=$database_dbname
+      - database_host=$database_host
+      - database_port=$database_port
+
+  db : 
+    extends :
+      file : docker-compose.yml 
+      service : db

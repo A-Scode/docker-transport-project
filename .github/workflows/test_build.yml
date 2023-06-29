@@ -43,10 +43,12 @@ jobs:
   backend_test:
     runs-on : ${{ matrix.os }}
 
+    needs : 
+      - build_test
+
     strategy :
       matrix : 
         os : 
-          - windows-latest
           - ubuntu-latest
 
         python-version : 
@@ -71,7 +73,6 @@ jobs:
         
       - name : runs test
         working-directory : ./backend
-        run : | 
-          python manage.py test
+        run : python manage.py test
   
   
