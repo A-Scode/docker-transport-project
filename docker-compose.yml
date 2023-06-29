@@ -27,7 +27,7 @@ services :
     env_file: 
       - "backend/.env"
     environment : 
-      - MYSQL_ROOT_PASSWORD=${database_password}
-      - MYSQL_DATABASE=${database_dbname}
+      - MYSQL_ROOT_PASSWORD=${DATABASE_PASSWORD}
+      - MYSQL_DATABASE=${DATABASE_DBNAME}
 
     
