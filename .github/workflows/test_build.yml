@@ -43,7 +43,7 @@ jobs:
   backend_test:
     runs-on : ${{ matrix.os }}
 
-    environment : "docker-compose"
+    environment : docker-compose
 
     needs : 
       - build_test
