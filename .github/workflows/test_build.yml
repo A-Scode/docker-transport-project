@@ -63,6 +63,9 @@ jobs:
       - name : checkout to repo
         uses: actions/checkout@v2
 
+      - name : check envs
+        run : printenv
+
       - name : setup python
         uses : actions/setup-python@v4
         with : 
