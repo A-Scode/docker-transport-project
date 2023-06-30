@@ -64,7 +64,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name : check envs
-        run : printenv
+        run : echo ${{ secrests.DATABASE_DBNAMR}}
 
       - name : setup python
         uses : actions/setup-python@v4
