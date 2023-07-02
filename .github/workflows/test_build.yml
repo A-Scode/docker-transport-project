@@ -46,7 +46,7 @@ jobs:
     environment : docker-compose
     
     env :
-      - DATABASE_DBNAME : ${{secrets.DBNAME }}
+      DATABASE_DBNAME : ${{secrets.DBNAME }}
 
     needs : 
       - build_test
