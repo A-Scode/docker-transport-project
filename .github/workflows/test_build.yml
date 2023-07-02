@@ -44,6 +44,9 @@ jobs:
     runs-on : ${{ matrix.os }}
 
     environment : docker-compose
+    
+    env :
+      - DATABASE_DBNAME : ${{secrets.DBNAME }}
 
     needs : 
       - build_test
@@ -64,7 +67,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name : check envs
-        run : echo ${{ secrests.DATABASE_DBNAMR}}
+        run : echo ${{ secrets.DATABASE_DBNAMR}}
 
       - name : setup python
         uses : actions/setup-python@v4
