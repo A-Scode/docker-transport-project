@@ -12,11 +12,14 @@ export const userType = {
     tranporter : "TRANSPORTER"
 }
 
+
+console.log(import.meta.env)
+
 export const googleCreds = {
-    clinetId : "977451559774-c7eb80kljfkvt24ks1tm0id9cvo5t6v9.apps.googleusercontent.com"
+    clinetId : import.meta.env.VITE_GOOGLE_CLIENT_ID
 }
 
-export const baseURL = "http://localhost:8000/"
+export const baseURL = `http://${import.meta.env.VITE_BACKEND_HOST}:${import.meta.env.VITE_BACKEND_PORT}/`
 
 export const APIurls = {
     common : `${baseURL}common/`,
